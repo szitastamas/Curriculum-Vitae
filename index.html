@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Tamas Szitas Curriculum Vitae</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <link rel="stylesheet" href="mobile_first.css">
 </head>
@@ -34,16 +35,16 @@
                 <a href="index.html" class="nav-link" id="home-nav">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="about-me">About Me</a>
+                <a class="nav-link" id="about-me">About me</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="edu-nav">Education</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="work-nav">Work Places</a>
+                <a class="nav-link" id="work-nav">Workplaces</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="contact-nav">Contact</a>
+                <a class="nav-link" id="contact-nav">Contact me</a>
             </li>
         </ul>
     </nav>
@@ -67,31 +68,39 @@
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
             </div>
+            <div class="icons lang-icons">
+                <a href="#!">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="#!">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="#!">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <p class="contact-title">If you are wondering how to reach me</p>
-        <div id="contact-box">
-            <div class="contact-card" id="contact-card-1">
-                <i class="far fa-envelope contact-icon"></i>
-                <div class="label">E-mail Address:</div>
-                <div class="contact-text">szitastamas@hotmail.com</div>
-            </div>
-            <div class="contact-card" id="contact-card-2">
-                <i class="fas fa-phone contact-icon"></i>
-                <div class="label">Phone number:</div>
-                <div class="contact-text">+4917643963402</div>
-            </div>
-            <div class="contact-card" id="contact-card-3">
-                <i class="fas fa-home contact-icon"></i>
-                <div class="label">Home Address:</div>
-                <div class="adress contact-text">
-                    <div>Wittbräuckerstr. 72.</div>
-                    <div>44287 Dortmund - Aplerbeck</div>
-                    <div>Deutschland</div>
+        <div class="contact-box">
+            <p class="contact-title">If you are wondering how to reach me<i class="fas fa-comment contact-title-icon"></i></p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="contact-label">Type in your name</label>
+                    <input type="text" class="form-input" placeholder="Please enter your full name">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="e-mail" class="contact-label">Type in your E-mail address</label>
+                    <input type="email" class="form-input" name="e-mail" id="e-mail" placeholder="E-mail address required">
+                </div>
+                <div class="form-group">
+                    <label for="text" class="contact-label">Share your thoughts with me</label>
+                    <textarea name="message" class="form-input form-message"></textarea>
+                </div>
+                <button type="submit" class="form-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
@@ -154,10 +163,10 @@
                         <li>2019 - 2021</li>
                         <hr />
                     </ul>
-                    <p class="card-text">I am currently attending the two-year-long academic course of Dr. Heuer IT-Akademie where I intend to obtain my qualifiation as a software developer.</p>
+                    <p class="card-text">I am currently attending the two-year-long academic course of Dr. Heuer IT-Academy where I intend to obtain my qualifiation as a software developer.</p>
                 </div>
             </div>
-        </div>   
+        </div> 
     </section>
     
     <section id="exp">
@@ -227,7 +236,7 @@
 
     <section id="about" class="hide">
         <div class="about-content">
-            <h2 class="about-title">Tamas <span class="text-secondary">Szitas</span></h2>
+            <h2 class="about-title"><span class="text-secondary">Tamas</span> Szitas</h2>
             <img src="img/grumpy.jpg" class="menu-portrait" alt="Bewerbungsfoto">
             <p class="about-text1">Welcome to my page. You are here for a reason so I do not want to waste your time. Let me get to the introduction! I am an ex-dietitian who got engaged with programming, especially with Web-Development and I eager to learn everything about it in depth. This is a long and interesting journey which I happily take part in showing that I am willing to keep learning outside of school as well. In a rapidly changing environment - like programming - it is essential to be willing to keep up-to-date with recent technologies and new methods.</p>
             <p class="about-text2">I consider myself to be a reliable and honest person who does his best in every situation and is not afraid to admit if a mistake was made as I do not like pushing the responsibility on others for my mistakes. I like planning and preparing for certain tasks and occasions which makes it possible for me to always manage my time properly. I am a friendly person enjoys solving complex tasks and problems. Staying focused and disciplined is the key of efficiency.</p>
