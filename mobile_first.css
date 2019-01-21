@@ -74,7 +74,7 @@ hr{
     width: 28px;
     height: 3px;
     margin: 0px 0px 5px 0px;
-    background-color: var(--secondary-color);
+    background-color: #222;
 }
 
 h1, h2, h3{
@@ -110,6 +110,10 @@ ul{
 .menu-btn.close{
     transition: transform 500ms ease-out;
     transform: rotate(180deg);
+}
+
+.menu-btn.close > .btn-line{
+        background-color: var(--secondary-color);
 }
 
 .menu-btn.close > .btn-line:nth-child(1){
