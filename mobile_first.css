@@ -355,10 +355,6 @@ section#school{
 }
 
 .card-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     text-align: center;
     height: 100%;
     padding: 20px;
@@ -512,10 +508,6 @@ section#exp{
 }
 
 .xp-card-back{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     text-align: center;
     height: 100%;
     padding: 20px;
