@@ -684,6 +684,9 @@ footer a{
         justify-content: space-evenly;
         align-items: center;
     }
+    h2, h3, p, ul, a{
+        font-size: 1.3rem;
+    }
 }
 
 @media (min-width: 1220px){
