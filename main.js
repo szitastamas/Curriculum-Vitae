@@ -12,13 +12,12 @@ const homeContent = document.querySelector('.home-content');
 const container = document.querySelector('.container');
 const school = document.getElementById('school');
 const contact = document.getElementById('contact');
-const contactBox = document.getElementById('contact-box')
-const contactCard = document.querySelectorAll('.contact-card');
+const contactBox = document.querySelector('.contact-box');
+const msgBubble = document.querySelector('.contact-title-icon');
 const cards = document.querySelector('.cards');
 const card = document.querySelectorAll('.card');
 const cardBckg = document.querySelectorAll('.card-bckg');
 const cardContent = document.querySelectorAll('.card-content');
-const contactCards = document.querySelectorAll('.contact-card');
 const exp = document.querySelector('#exp');
 const expCards = document.querySelector('.exp-cards');
 const expCard = document.querySelectorAll('.exp-card');
@@ -37,7 +36,6 @@ function toggleMenu(){
     navItems.forEach(item => item.classList.toggle('show'));
     contact.classList.toggle('menu-shown');
     contactBox.classList.toggle('menu-shown');
-    contactCard.forEach(item => item.classList.toggle('menu-shown'));
     //overlay.classList.toggle('content-shown');
     homeContent.classList.toggle('menu-shown');
     for(i = 0; i < navItems.length; i++){
@@ -99,33 +97,3 @@ function navActive(e){
         contact.classList.remove('contact-shown');
     }
 }
-
-/*arrowDown.addEventListener('click', arrowWrapUp);
-function arrowWrapUp(){
-    contactCards.forEach(item => item.classList.toggle('contact-shown'));
-    arrowDown.classList.toggle('contact-shown');
-}
-
-cardBckg.forEach(item => item.addEventListener('click', showCard));
-function showCard(e){
-    let clickedItem = e.currentTarget;
-    clickedItem.classList.add('school-content-shown');
-    clickedItem.parentElement.classList.add('school-content-shown');
-    if(clickedItem.classList.contains('school-content-shown')){
-        clickedItem.nextElementSibling.classList.add('school-content-shown');
-    }
-}
-
-xpCardFront.forEach(item => item.addEventListener('click', function(e){
-    e.currentTarget.classList.add('xp-details-shown');
-    e.currentTarget.nextElementSibling.classList.add('xp-details-shown');
-}))
-
-arrowLeft.forEach(item => item.addEventListener('click', hideSchoolContent));
-function hideSchoolContent(e){
-    let clickedItem = e.currentTarget;
-    clickedItem.parentElement.parentElement.classList.remove('school-content-shown');
-    clickedItem.parentElement.parentElement.parentElement.children[0].classList.remove('school-content-shown');
-    e.currentTarget.parentElement.parentElement.children[0].classList.remove('xp-details-shown');
-    e.currentTarget.parentElement.parentElement.children[1].classList.remove('xp-details-shown');
-}*/
