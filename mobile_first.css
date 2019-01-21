@@ -61,10 +61,10 @@ hr{
 }
 
 .menu-btn{
-    position: fixed;
+    position: absolute;
     z-index: 4;
-    right: 10px;
-    top: 2%;
+    right: 15px;
+    top: 3%;
     cursor: pointer;
     transition: transform 500ms ease-out;
     z-index: 10;
