@@ -23,6 +23,11 @@ body{
     color: var(--primary-color);
 }
 
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
 #landing-page{
     display: block;
     height: 100vh;
@@ -277,6 +282,8 @@ ul{
     line-height: 2;
     font-size: 1.1rem;
     max-width: 900px;
+    animation: fadeEffect 1s;
+
 }
 
 .about-content h2{
@@ -319,6 +326,7 @@ section#school{
     transition: 300ms all ease-out;
     padding: 20px;
     margin: 0 auto;
+    animation: fadeEffect 1s;
 }
 
 .card{
@@ -451,6 +459,7 @@ section#exp{
     transition: 300ms all ease-out;
     padding: 20px;
     margin: 0 auto;
+    animation: fadeEffect 1s;
 }
 
 #exp.xp-shown > .exp-cards{
@@ -570,6 +579,7 @@ li{
     max-width: 550px;
     margin: 50px auto;
     background: var(--primary-color);
+    animation: fadeEffect 1s;
 }
 
 .contact-title{
