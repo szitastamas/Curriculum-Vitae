@@ -695,7 +695,10 @@ footer a{
     right: 1.5%;
     font-size: 1.2rem;
     color: var(--secondary-color);
-    cursos: pointer;
+}
+
+#to-top > i{
+    cursor: pointer;
 }
 
 @media (min-width: 480px){
