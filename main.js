@@ -101,14 +101,23 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     toTop.style.opacity = "1";
-    menuNav.style.transform = "rotateX(90deg)";
   } else {
     toTop.style.opacity = "0";
-    menuNav.style.transform = "rotateX(0)";
   }
 }
 
 toTop.onclick = topFunction => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    menuNav.style.transform = "translateY(0)";
+  } else {
+    menuNav.style.transform = "translateY(-100%)";
+  }
+  prevScrollpos = currentScrollPos;
 }
