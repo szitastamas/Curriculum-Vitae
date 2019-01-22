@@ -24,6 +24,7 @@ const expCard = document.querySelectorAll('.exp-card');
 const about = document.getElementById('about');
 const footer = document.getElementById('footer');
 const languageContainer = document.querySelector('.language-container');
+const toTop = document.getElementById('to-top');
 
 
 
@@ -44,7 +45,7 @@ function toggleMenu(){
     aboutMe.parentElement.classList.add('is-active');
     aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
     menu.classList.contains('show') ? footer.style.display = 'none' : footer.style.display = 'block';
-    //menu.classList.contains('show') ? languageContainer.style.display = "none" : languageContainer.style.display = "block";
+    menu.classList.contains('show') ? languageContainer.style.display = "none" : languageContainer.style.display = "block";
     if(eduNav.parentElement.classList.contains('is-active')){
         school.classList.add('edu-shown');
         card.forEach(item => item.classList.add('edu-shown'));
@@ -96,4 +97,20 @@ function navActive(e){
     }else{
         contact.classList.remove('contact-shown');
     }
+}
+
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    toTop.style.opacity = "1";
+    menuNav.style.transform = "rotateX(90deg)";
+  } else {
+    toTop.style.opacity = "0";
+    menuNav.style.transform = "rotateX(0)";
+  }
+}
+
+toTop.onclick = topFunction => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
