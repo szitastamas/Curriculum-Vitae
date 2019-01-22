@@ -23,7 +23,6 @@ const expCards = document.querySelector('.exp-cards');
 const expCard = document.querySelectorAll('.exp-card');
 const about = document.getElementById('about');
 const footer = document.getElementById('footer');
-const languageContainer = document.querySelector('.language-container');
 const toTop = document.getElementById('to-top');
 
 
@@ -45,7 +44,6 @@ function toggleMenu(){
     aboutMe.parentElement.classList.add('is-active');
     aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
     menu.classList.contains('show') ? footer.style.display = 'none' : footer.style.display = 'block';
-    menu.classList.contains('show') ? languageContainer.style.display = "none" : languageContainer.style.display = "block";
     if(eduNav.parentElement.classList.contains('is-active')){
         school.classList.add('edu-shown');
         card.forEach(item => item.classList.add('edu-shown'));
