@@ -69,6 +69,8 @@ function toggleMenu(){
 
 navItems.forEach(item => item.addEventListener('click', navActive));
 function navActive(e){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     for(i = 0; i < navItems.length; i++){
         navItems[i].classList.remove('is-active');
     }
@@ -106,7 +108,7 @@ function scrollFunction() {
   }
 }
 
-toTop.onclick = topFunction => {
+toTop.onclick = function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
@@ -115,9 +117,15 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    menuNav.style.transform = "translateY(0)";
+    menu.style.transform = "rotateX(0deg)";
   } else {
-    menuNav.style.transform = "translateY(-100%)";
+    menu.style.transform = "rotateX(-90deg)";
   }
   prevScrollpos = currentScrollPos;
+  if(document.documentElement.scrollTop > 5){
+    menuNav.style.paddingTop = "5px";
+    }else{
+    menuNav.style.paddingTop = "15px";
 }
+}
+
