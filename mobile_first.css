@@ -123,6 +123,34 @@ ul{
     color: var(--secondary-color);
 }
 
+.lang-btns{
+    height: 30px;
+    width: auto;
+}
+
+.lang-btns > button{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    height: 100%;
+    width: 30px;
+    margin: 10px;
+    padding: 0.4rem;
+}
+
+.english{
+    background: url(img/english.png) no-repeat center center/cover;
+}
+
+.german{
+    background: url(img/germany.png) no-repeat center center/cover;
+}
+
+.hungarian{
+    background: url(img/hungary.png) no-repeat center center/cover;
+}
+
 .menu-btn.close{
     transition: transform 500ms ease-out;
     transform: rotate(180deg);
@@ -703,6 +731,12 @@ footer a{
 
 #to-top > i{
     cursor: pointer;
+}
+
+@media (min-width: 400px){
+    .cards, .exp-cards{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 }
 
 @media (min-width: 480px){
