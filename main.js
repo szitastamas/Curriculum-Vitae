@@ -25,7 +25,10 @@ const about = document.getElementById('about');
 const footer = document.getElementById('footer');
 const toTop = document.getElementById('to-top');
 
-
+function toTopScrolling(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 menuBtn.addEventListener('click', toggleMenu);
 function toggleMenu(){
@@ -34,98 +37,53 @@ function toggleMenu(){
     menu.classList.toggle('show');
     menuNav.classList.toggle('show');
     navItems.forEach(item => item.classList.toggle('show'));
-    contact.classList.toggle('menu-shown');
-    contactBox.classList.toggle('menu-shown');
-    //overlay.classList.toggle('content-shown');
-    homeContent.classList.toggle('menu-shown');
-    for(i = 0; i < navItems.length; i++){
-        navItems[i].classList.remove('is-active');
-    }
+
+    navItems.forEach(item => item.classList.remove('is-active'));
+
     aboutMe.parentElement.classList.add('is-active');
     aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
+
     menu.classList.contains('show') ? footer.style.display = 'none' : footer.style.display = 'block';
-    if(eduNav.parentElement.classList.contains('is-active')){
-        school.classList.add('edu-shown');
-        card.forEach(item => item.classList.add('edu-shown'));
-    }else{
-        school.classList.remove('edu-shown');
-        card.forEach(item => item.classList.remove('edu-shown'));
-    }
-    if(workNav.parentElement.classList.contains('is-active')){
-        exp.classList.add('xp-shown');
-        expCards.classList.add('xp-shown');
-        expCard.forEach(item => item.classList.add('xp-shown'));
-    }else{
-        exp.classList.remove('xp-shown');
-        expCards.classList.remove('xp-shown');
-        expCard.forEach(item => item.classList.remove('xp-shown'));
-    }
-    if(contactNav.parentElement.classList.contains('is-active')){
-        contact.classList.add('contact-shown');
-    }else{
-        contact.classList.remove('contact-shown');
-    }
+
+    eduNav.parentElement.classList.contains('is-active') ? school.classList.add('edu-shown') : school.classList.remove('edu-shown');
+
+    workNav.parentElement.classList.contains('is-active') ? exp.classList.add('xp-shown') : exp.classList.remove('xp-shown');
+
+    contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');
 }
 
 navItems.forEach(item => item.addEventListener('click', navActive));
+
 function navActive(e){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    for(i = 0; i < navItems.length; i++){
-        navItems[i].classList.remove('is-active');
-    }
+    toTopScrolling();
+
+    navItems.forEach(item => item.classList.remove('is-active'));
     e.currentTarget.classList.add('is-active');
 
     aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
 
-    if(eduNav.parentElement.classList.contains('is-active')){
-        school.classList.add('edu-shown');
-        card.forEach(item => item.classList.add('edu-shown'));
-    }else{
-        school.classList.remove('edu-shown');
-        card.forEach(item => item.classList.remove('edu-shown'));
-    }
-    if(workNav.parentElement.classList.contains('is-active')){
-        exp.classList.add('xp-shown');
-        expCard.forEach(item => item.classList.add('xp-shown'));
-    }else{
-        exp.classList.remove('xp-shown');
-        expCard.forEach(item => item.classList.remove('xp-shown'));
-    }
-    if(contactNav.parentElement.classList.contains('is-active')){
-        contact.classList.add('contact-shown');
-    }else{
-        contact.classList.remove('contact-shown');
-    }
+    eduNav.parentElement.classList.contains('is-active') ? school.classList.add('edu-shown') : school.classList.remove('edu-shown');
+
+    workNav.parentElement.classList.contains('is-active') ? exp.classList.add('xp-shown') : exp.classList.remove('xp-shown');
+
+    contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');
 }
 
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    toTop.style.opacity = "1";
-  } else {
-    toTop.style.opacity = "0";
-  }
+window.onscroll = function() {arrowFade()};
+
+function arrowFade() {
+  document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ? toTop.style.opacity = "1" : toTop.style.opacity = "0";
 }
 
-toTop.onclick = function(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+toTop.onclick = function(){toTopScrolling()};
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
+
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    menu.style.transform = "rotateX(0deg)";
-  } else {
-    menu.style.transform = "rotateX(-90deg)";
-  }
+  prevScrollpos > currentScrollPos ? menu.style.transform = "rotateX(0deg)" : menu.style.transform = "rotateX(-90deg)";
   prevScrollpos = currentScrollPos;
-  if(document.documentElement.scrollTop > 5){
-    menuNav.style.paddingTop = "5px";
-    }else{
-    menuNav.style.paddingTop = "15px";
-}
+
+  document.documentElement.scrollTop > 0 ? menuNav.style.paddingTop = "5px" : menuNav.style.paddingTop = "20px";
 }
 
