@@ -24,6 +24,13 @@ const expCard = document.querySelectorAll('.exp-card');
 const about = document.getElementById('about');
 const footer = document.getElementById('footer');
 const toTop = document.getElementById('to-top');
+const contactForm = document.querySelector('.contact-form');
+const formInput = document.querySelectorAll('.form-input');
+const formBtn = document.querySelector('.form-btn');
+const formName = document.querySelector('.form-name');
+const formEmail = document.querySelector('.form-email');
+const formMsg = document.querySelector('.form-message');
+const alertMsg = document.querySelector('.alert-msg');
 
 function toTopScrolling(){
     document.body.scrollTop = 0;
@@ -53,7 +60,6 @@ function toggleMenu(){
 }
 
 navItems.forEach(item => item.addEventListener('click', navActive));
-
 function navActive(e){
     toTopScrolling();
 
@@ -69,10 +75,15 @@ function navActive(e){
     contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');
 }
 
+
 window.onscroll = function() {arrowFade()};
 
 function arrowFade() {
-  document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ? toTop.style.opacity = "1" : toTop.style.opacity = "0";
+  if(window.pageYOffset > 50){
+      toTop.style.opacity = "1";
+  }else{
+      toTop.style.opacity = "0";
+  }
 }
 
 toTop.onclick = function(){toTopScrolling()};
@@ -87,3 +98,16 @@ window.onscroll = function() {
   document.documentElement.scrollTop > 0 ? menuNav.style.paddingTop = "5px" : menuNav.style.paddingTop = "20px";
 }
 
+contactForm.addEventListener('submit', () => {
+    const div = document.createElement('div');
+    contactBox.insertBefore(div, contactForm);
+    setTimeout(() => {div.remove()}, 2500);
+    if(formName.value === '' || formEmail.value === '' || formMsg.value === ''){
+        event.preventDefault();
+        div.className = "alert-msg error";
+        div.textContent = "Please fill in all fields!";
+    }else{
+        div.className = "alert-msg success";
+        div.textContent = "Thank you for submitting my form."
+}
+})
