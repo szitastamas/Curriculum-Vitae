@@ -49,22 +49,35 @@ hr{
 
 .home-content{
     display: block;
+    height: 100%;
     width: 100%;
     padding: 20px;
-    font-size: 1.3rem;
     z-index: 5;
-    opacity: 1;
+    background: rgba(0, 0, 0, .3);
     transition: opacity 200ms ease-out;
+    -webkit-transition: opacity 200ms ease-out;
+    -moz-transition: opacity 200ms ease-out;
+    -o-transition: opacity 200ms ease-out;
+    -ms-transition: opacity 200ms ease-out;
     text-align: left;
 }
+/* 
+-webkit-transition: ;
+-moz-transition: ;
+-o-transition: ;
+-ms-transition: ; */
 
 .home-content > *{
-    margin: 30px 30px;
+    padding: 20px 0px;
 }
 
 .lg-heading{
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 500;
+}
+
+.sm-heading{
+    font-size: 1.8rem;
 }
 
 .menu-branding {
@@ -89,7 +102,8 @@ hr{
     width: 25px;
     height: 3px;
     margin: 0px 0px 5px 0px;
-    background-color: #555;
+    background-color: #333;
+    border: .5px var(--secondary-color) solid;
     border-radius: 10px;
 }
 
@@ -123,9 +137,20 @@ ul{
     color: var(--secondary-color);
 }
 
+.landing-icons{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .lang-btns{
     height: 30px;
     width: auto;
+    margin-left: 25px;
 }
 
 .lang-btns > button{
@@ -700,6 +725,14 @@ li{
     box-shadow: 0 0 2px .5px var(--secondary-color);
 }
 
+.error{
+    background: red;
+}
+
+.success{
+    background: green;
+}
+
 .form-message{
     padding: 10px;
     min-height: 120px;
@@ -727,6 +760,7 @@ footer a{
     right: 1.5%;
     font-size: 1.2rem;
     color: var(--secondary-color);
+    transition: 100ms opacity ease-out;
 }
 
 #to-top > i{
