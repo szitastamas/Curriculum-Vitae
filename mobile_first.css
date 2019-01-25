@@ -95,6 +95,10 @@ hr{
     top: 3%;
     cursor: pointer;
     transition: transform 500ms ease-out;
+    -webkit-transition: transform 500ms ease-out;
+    -moz-transition: transform 500ms ease-out;
+    -o-transition: transform 500ms ease-out;
+    -ms-transition: transform 500ms ease-out;
     z-index: 10;
 }
 
@@ -210,7 +214,11 @@ ul{
     opacity: 0;
     overflow: hidden;
     z-index: 6;
-    transition: 300ms transform ease-out;
+    transition: transform 300ms ease-out;
+    -webkit-transition: -webkit-transform 300ms ease-out;
+    -moz-transition: transform 300ms ease-out;
+    -o-transition: transform 300ms ease-out;
+    -ms-transition: transform 300ms ease-out;
     transform-origin: top center;
 }
 
@@ -228,6 +236,10 @@ ul{
     padding: 15px 5px 5px 5px;
     list-style: none;
     transform: translate3d(0, -100%, 0);
+    -webkit-transition: -webkit-all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
     transition: all 300ms ease-out;
     z-index: 4;
     transform-origin: top center;
@@ -259,35 +271,63 @@ ul{
 
 .menu-nav > .nav-item{
     transform: translate3d(0, -500px, 0);
+    -webkit-transition: -webkit-transform 300ms ease-out;
+    -moz-transition: transform 300ms ease-out;
+    -o-transition: transform 300ms ease-out;
+    -ms-transition: transform 300ms ease-out;
 }
 
 .menu-nav.show > .nav-item:nth-child(1){
     transition: transform 300ms ease-out 100ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 100ms;
+    -moz-transition: transform 300ms ease-out 100ms;
+    -o-transition: transform 300ms ease-out 100ms;
+    -ms-transition: transform 300ms ease-out 100ms;
     transform: translate3d(0, 0, 0);
 }
 
 .menu-nav.show > .nav-item:nth-child(2){
-    transition: transform 300ms ease-out 200ms;
+    transition: transform 300ms ease-out 180ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 180ms;
+    -moz-transition: transform 300ms ease-out 180ms;
+    -o-transition: transform 300ms ease-out 180ms;
+    -ms-transition: transform 300ms ease-out 180ms;
     transform: translate3d(0, 0, 0);
 }
 
 .menu-nav.show > .nav-item:nth-child(3){
-    transition: transform 300ms ease-out 300ms;
+    transition: transform 300ms ease-out 260ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 260ms;
+    -moz-transition: transform 300ms ease-out 260ms;
+    -o-transition: transform 300ms ease-out 260ms;
+    -ms-transition: transform 300ms ease-out 260ms;
     transform: translate3d(0, 0, 0);
 }
 
 .menu-nav.show > .nav-item:nth-child(4){
-    transition: transform 300ms ease-out 400ms;
+    transition: transform 300ms ease-out 340ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 340ms;
+    -moz-transition: transform 300ms ease-out 340ms;
+    -o-transition: transform 300ms ease-out 340ms;
+    -ms-transition: transform 300ms ease-out 340ms;
     transform: translate3d(0, 0, 0);
 }
 
 .menu-nav.show > .nav-item:nth-child(5){
-    transition: transform 300ms ease-out 500ms;
+    transition: transform 300ms ease-out 420ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 420ms;
+    -moz-transition: transform 300ms ease-out 420ms;
+    -o-transition: transform 300ms ease-out 420ms;
+    -ms-transition: transform 300ms ease-out 420ms;
     transform: translate3d(0, 0, 0);
 }
 
 .menu-nav.show > .nav-item:nth-child(6){
-    transition: transform 300ms ease-out 600ms;
+    transition: transform 300ms ease-out 500ms;
+    -webkit-transition: -webkit-transform 300ms ease-out 500ms;
+    -moz-transition: transform 300ms ease-out 500ms;
+    -o-transition: transform 300ms ease-out 500ms;
+    -ms-transition: transform 300ms ease-out 500ms;
     transform: translate3d(0, 0, 0);
 }
 
@@ -692,7 +732,7 @@ li{
 .alert-msg{
     display: block;
     width: 90%;
-    padding: .6rem;
+    padding: .5rem;
     text-align: center;
     color: black;
     font-size: 1.2rem;
@@ -742,14 +782,6 @@ li{
 
 .form-input:focus{
     box-shadow: 0 0 2px .5px var(--secondary-color);
-}
-
-.error{
-    background: red;
-}
-
-.success{
-    background: green;
 }
 
 .form-message{
