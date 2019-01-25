@@ -100,7 +100,7 @@ window.onscroll = function() {
 
 contactForm.addEventListener('submit', () => {
     const div = document.createElement('div');
-    contactBox.insertBefore(div, contactForm);
+    contactForm.insertBefore(div, formBtn);
     setTimeout(() => {div.remove()}, 2500);
     if(formName.value === '' || formEmail.value === '' || formMsg.value === ''){
         event.preventDefault();
