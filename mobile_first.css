@@ -80,14 +80,6 @@ hr{
     font-size: 1.8rem;
 }
 
-.menu-branding {
-    display: block;
-    margin: 0px;
-    width: 300px;
-    overflow: hidden;
-    transition: all 400ms ease-out;
-}
-
 .menu-btn{
     position: absolute;
     z-index: 4;
@@ -193,7 +185,7 @@ ul{
 }
 
 .menu-btn.close > .btn-line:nth-child(2){
-    transition: all 500ms ease-out;
+    transition: opacity 500ms ease-out;
     opacity: 0;
 }
 
@@ -214,17 +206,19 @@ ul{
     opacity: 0;
     overflow: hidden;
     z-index: 6;
-    transition: transform 300ms ease-out;
-    -webkit-transition: -webkit-transform 300ms ease-out;
-    -moz-transition: transform 300ms ease-out;
-    -o-transition: transform 300ms ease-out;
-    -ms-transition: transform 300ms ease-out;
     transform-origin: top center;
+    -webkit-transition: -webkit-all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: transform 300ms ease-out;
+
 }
 
 .menu.show{
     position: sticky;
     opacity: .9;
+    transform: translate3d(0, 0, 0);
 }
 
 .menu-nav{
@@ -235,18 +229,7 @@ ul{
     margin: 0px;
     padding: 15px 5px 5px 5px;
     list-style: none;
-    transform: translate3d(0, -100%, 0);
-    -webkit-transition: -webkit-all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
     z-index: 4;
-    transform-origin: top center;
-}
-
-.menu-nav.show{
-    transform: translate3d(0, 0, 0);
 }
 
 .menu-portrait{
@@ -271,10 +254,6 @@ ul{
 
 .menu-nav > .nav-item{
     transform: translate3d(0, -500px, 0);
-    -webkit-transition: -webkit-transform 300ms ease-out;
-    -moz-transition: transform 300ms ease-out;
-    -o-transition: transform 300ms ease-out;
-    -ms-transition: transform 300ms ease-out;
 }
 
 .menu-nav.show > .nav-item:nth-child(1){
@@ -335,7 +314,6 @@ ul{
     text-transform: uppercase;
     font-size: 1rem;
     padding: 5px 0px;
-    transition: all 150ms ease-out;
     cursor: pointer;
     margin-top: 5px;
     margin-right: 5px;
@@ -343,12 +321,12 @@ ul{
 
 .nav-item a{
     padding: 8px 10px;
-    transition: all 200ms ease-out;
+    border-radius: 20px;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
 }
 
 .nav-item a:hover{
     color: var(--secondary-color);
-    border-radius: 20px;
     background-color: rgba(192, 192, 192, 0.05);
 }
 
@@ -361,7 +339,6 @@ ul{
 #about.show{
     display: block;
     width: auto;
-    transition: all 300ms ease-in-out 200ms;
     background: linear-gradient(180deg, rgb(19, 19, 19), #474747);
     background-size: cover;
     background-repeat: no-repeat;
@@ -420,7 +397,6 @@ section#school{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 50px;
-    transition: 300ms all ease-out;
     padding: 20px;
     margin: 0 auto;
     animation: fadeEffect 1s;
@@ -434,31 +410,6 @@ section#school{
     font-size: 1rem;
     opacity: 1;
     box-shadow: 2px 2px 5px 2px  #111;
-}
-
-.card.edu-shown:first-child{
-    opacity: 1;
-    transition: 400ms all ease-out 200ms;
-}
-
-.card.edu-shown:nth-child(2){
-    opacity: 1;
-    transition: 400ms all ease-out 270ms;
-}
-
-.card.edu-shown:nth-child(3){
-    opacity: 1;
-    transition: 400ms all ease-out 340ms;
-}
-
-.card.edu-shown:nth-child(4){
-    opacity: 1;
-    transition: 400ms all ease-out 410ms;
-}
-
-.card.edu-shown:nth-child(5){
-    opacity: 1;
-    transition: 400ms all ease-out 480ms;
 }
 
 .card-content{
@@ -553,7 +504,6 @@ section#exp{
     display: none;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 50px;
-    transition: 300ms all ease-out;
     padding: 20px;
     margin: 0 auto;
     animation: fadeEffect 1s;
@@ -570,39 +520,6 @@ section#exp{
     font-size: 1rem;
     opacity: 1;
     box-shadow: 2px 2px 5px 2px  #111;
-}
-
-.exp-cards.xp-shown{
-    transition: all 400ms ease-in-out;
-}
-
-.exp-card.xp-shown{
-    opacity: 1;
-    transition: opacity 400ms ease-in-out;
-}
-
-.exp-card.xp-shown:nth-child(1){
-    transition: opacity 400ms ease-in-out 200ms;
-}
-
-.exp-card.xp-shown:nth-child(2){
-    transition: opacity 400ms ease-in-out 270ms;
-}
-
-.exp-card.xp-shown:nth-child(3){
-    transition: opacity 400ms ease-in-out 340ms;
-}
-
-.exp-card.xp-shown:nth-child(4){
-    transition: opacity 400ms ease-in-out 410ms;
-}
-
-.exp-card.xp-shown:nth-child(5){
-    transition: opacity 400ms ease-in-out 480ms;
-}
-
-.exp-card.xp-shown:nth-child(6){
-    transition: opacity 400ms ease-in-out 550ms;
 }
 
 .xp-card-front{
