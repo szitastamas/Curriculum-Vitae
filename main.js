@@ -101,13 +101,15 @@ window.onscroll = function() {
 contactForm.addEventListener('submit', () => {
     const div = document.createElement('div');
     contactForm.insertBefore(div, formBtn);
-    setTimeout(() => {div.remove()}, 2500);
+    setTimeout(() => {div.remove(); contactBox.style.boxShadow = "none";}, 2500);
     if(formName.value === '' || formEmail.value === '' || formMsg.value === ''){
         event.preventDefault();
         div.className = "alert-msg error";
         div.textContent = "Please fill in all fields!";
+        contactBox.style.boxShadow = "0 0 2px .5px red";
     }else{
         div.className = "alert-msg success";
         div.textContent = "Thank you for submitting my form."
+        contactBox.style.boxShadow = "0 0 2px .5px green";
 }
 })
