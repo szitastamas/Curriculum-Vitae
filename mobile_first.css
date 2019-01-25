@@ -689,6 +689,25 @@ li{
     width: 90%;
 }
 
+.alert-msg{
+    display: block;
+    width: 90%;
+    padding: .6rem;
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+.alert-msg.error{
+    background: rgba(194, 0, 0, 0.822);
+}
+
+.alert-msg.success{
+    background: rgba(0, 160, 0, 0.767);
+}
+
 .form-btn{
     color: var(--primary-color);
     font-family: Roboto, sans-serif;
