@@ -32,10 +32,12 @@ const formEmail = document.querySelector('.form-email');
 const formMsg = document.querySelector('.form-message');
 const alertMsg = document.querySelector('.alert-msg');
 
-function toTopScrolling(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+
+const aboutHandle = function(){aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';}
+const eduHandle = function(){eduNav.parentElement.classList.contains('is-active') ? school.classList.add('edu-shown') : school.classList.remove('edu-shown');}
+const workHandle = function(){workNav.parentElement.classList.contains('is-active') ? exp.classList.add('xp-shown') : exp.classList.remove('xp-shown');}
+const contactHandle = function(){contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');}
+const footerHandle = function(){menu.classList.contains('show') ? footer.style.display = 'none' : footer.style.display = 'block';}
 
 menuBtn.addEventListener('click', toggleMenu);
 function toggleMenu(){
@@ -43,50 +45,37 @@ function toggleMenu(){
     menuBtn.classList.toggle('close');
     menu.classList.toggle('show');
     menuNav.classList.toggle('show');
+
     navItems.forEach(item => item.classList.toggle('show'));
-
     navItems.forEach(item => item.classList.remove('is-active'));
-
     aboutMe.parentElement.classList.add('is-active');
-    aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
 
-    menu.classList.contains('show') ? footer.style.display = 'none' : footer.style.display = 'block';
-
-    eduNav.parentElement.classList.contains('is-active') ? school.classList.add('edu-shown') : school.classList.remove('edu-shown');
-
-    workNav.parentElement.classList.contains('is-active') ? exp.classList.add('xp-shown') : exp.classList.remove('xp-shown');
-
-    contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');
+    aboutHandle.call();
+    eduHandle.call();
+    workHandle.call();
+    contactHandle.call();
+    footerHandle.call();
 }
 
 navItems.forEach(item => item.addEventListener('click', navActive));
 function navActive(e){
+
     toTopScrolling();
 
     navItems.forEach(item => item.classList.remove('is-active'));
     e.currentTarget.classList.add('is-active');
 
-    aboutMe.parentElement.classList.contains('is-active') && menuNav.classList.contains('show') ? about.className = 'show' : about.className = 'hide';
-
-    eduNav.parentElement.classList.contains('is-active') ? school.classList.add('edu-shown') : school.classList.remove('edu-shown');
-
-    workNav.parentElement.classList.contains('is-active') ? exp.classList.add('xp-shown') : exp.classList.remove('xp-shown');
-
-    contactNav.parentElement.classList.contains('is-active') ? contact.classList.add('contact-shown') : contact.classList.remove('contact-shown');
-}
-
-
-window.onscroll = function() {arrowFade()};
-
-function arrowFade() {
-  if(window.pageYOffset > 50){
-      toTop.style.opacity = "1";
-  }else{
-      toTop.style.opacity = "0";
-  }
+    aboutHandle.call();
+    eduHandle.call();
+    workHandle.call();
+    contactHandle.call();
 }
 
 toTop.onclick = function(){toTopScrolling()};
+function toTopScrolling(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -96,6 +85,11 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 
   document.documentElement.scrollTop > 0 ? menuNav.style.paddingTop = "5px" : menuNav.style.paddingTop = "20px";
+  if(window.pageYOffset > 50){
+    toTop.style.opacity = "1";
+    }else{
+    toTop.style.opacity = "0";
+}
 }
 
 contactForm.addEventListener('submit', () => {
