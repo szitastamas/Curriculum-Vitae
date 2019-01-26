@@ -235,15 +235,12 @@ ul{
 .menu-portrait{
     display: block;
     margin: 20px auto;
-    height: 170px;
-    width: 170px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 5px 2px var(--secondary-color), -1px -1px 5px 2px var(--secondary-color);
-    background: url(img/grumpy.jpg);
-    background-size: cover;
-    animation-name: pulse;
-    animation-duration: 1500ms;
-    animation-iteration-count: infinite;
+    height: 250px;
+    width: 210px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 10px 1px var(--secondary-color);
+    background: no-repeat, center center;
+    /* animation: pulse 1500ms infinite; */
 }
 
 @keyframes pulse{
